@@ -16,6 +16,7 @@ a:focus-visible { outline: 2px solid $accent; outline-offset: 5px; border-radius
 .wrapper { max-width: 860px; padding-left: 40px; padding-right: 40px; }
 .site-header { border: 0; min-height: 0; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; padding-top: 30px; padding-bottom: 26px; gap: 20px; }
+.header-inner::after, .footer-inner::after { content: none; }
 .site-title, .site-title:visited { display: flex; align-items: center; gap: 11px; float: none; margin: 0; font-size: 20px; line-height: 1; font-weight: 650; letter-spacing: -.5px; color: $ink; }
 .site-title:hover { text-decoration: none; }
 .brand-mark { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: $accent; color: white; font-family: Georgia, serif; font-size: 25px; padding-bottom: 4px; }
