@@ -1,0 +1,39 @@
+title: yishanby
+description: 记录、思考与分享。
+author: yishanby
+lang: zh-CN
+timezone: Asia/Singapore
+url: https://yishanby.github.io
+baseurl: ""
+github_username: yishanby
+
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+permalink: /posts/:title/
+markdown: kramdown
+highlighter: rouge
+show_excerpts: true
+excerpt_separator: "<!-- more -->"
+future: false
+strict_front_matter: true
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - LICENSE-theme.txt
+  - .bundle
+  - scripts

@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  <div class="wrapper footer-inner">
+    <span>© {{ site.time | date: '%Y' }} {{ site.author | escape }}</span>
+    <div class="footer-links">
+      <a href="https://github.com/{{ site.github_username | escape }}">GitHub</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS 订阅</a>
+    </div>
+  </div>
+</footer>

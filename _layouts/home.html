@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<section class="home-intro" aria-labelledby="intro-title">
+  <p class="eyebrow">NOTES &amp; IDEAS</p>
+  <h1 id="intro-title">记录、思考<br>与分享<span class="accent-dot">。</span></h1>
+  <p class="intro-description">{{ site.author | escape }} 的个人博客</p>
+</section>
+<section aria-labelledby="posts-title">
+  <div class="section-heading">
+    <h2 id="posts-title">最新文章</h2>
+    {% if site.posts.size > 0 %}<a href="{{ '/archive/' | relative_url }}">查看归档 <span aria-hidden="true">↗</span></a>{% else %}<span class="section-note">从第一篇开始</span>{% endif %}
+  </div>
+  {% if site.posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in site.posts limit:10 %}
+    <li class="post-item">
+      <time class="post-meta" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time>
+      <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+      <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 140 }}</p>
+      {% if post.tags.size > 0 %}<div class="post-tags">{% for tag in post.tags %}<span>{{ tag | escape }}</span>{% endfor %}</div>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <div class="empty-state">
+    <span class="empty-mark" aria-hidden="true">✳</span>
+    <h3>第一篇，正在路上。</h3>
+    <p>这里将收录新的文章与记录。</p>
+  </div>
+  {% endif %}
+</section>
